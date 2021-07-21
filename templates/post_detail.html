@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ post.title }} {% endblock title  %}
+
+{% block content %}
+    <div class="post-entry">
+        <h1>{{ post.title }}</h1>
+        <p> By {{ post.author }}</p>
+        <hr>
+        <p>{{ post.body }}</p>
+        <a href="{% url 'home' %}">Home</a> |
+        <a href="{% url 'post_edit' %}">Edit</a> |
+        <a href="{% url 'post_delete' post.pk %}">Delete</a>
+    </div>
+{% endblock content %}
